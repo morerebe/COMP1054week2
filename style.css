@@ -1,0 +1,76 @@
+@charset "UTF-8"
+
+html {
+  font-size: 1.2em;
+  line-height: 1.8em;
+  height: 100%;
+}
+body {
+  height: 100%;
+}
+div {
+  width: 70%;
+  margin: 0 auto;
+  background-color: #EAEAEA;
+  padding: 30px;
+}
+
+/*classes & id */
+.redBG{
+  background-color: red;
+  color: #fff;
+  padding: 15px;
+}
+
+#resourceLink {
+  text-decoration: none;
+}
+
+/*attribute selector*/
+a[href="https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Selectors/Combinators#General_sibling"] {
+  color: orange;
+}
+
+/*pseudo class / element*/
+
+#resourceLink:hover {
+  color: purple;
+}
+
+ul li:nth-child(4) {
+  color: blue;
+}
+
+ul li:nth-child(even) { /*same level of specificity as above, but cancels it out because of cascade*/
+  color: red;
+}
+
+/*Combinators
+descendant combinator*/
+
+main em {
+  color: green;
+}
+
+p > em { /*greater sign is a child combinator & this is a direct child*/
+  color: orange;
+}
+
+/*Combinators
+general sibling     both examples below are the same specificity*/
+
+h3 ~ p {
+  color: purple;
+}
+
+/*direct sibling*/
+
+h3 + p {
+  color: yellow;
+}
+
+
+
+main section:first-of-type > h3 + p {
+  border: 1px solid #BADA55;
+}
